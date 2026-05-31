@@ -2,14 +2,16 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
-// Portfolio Data
+// =============================================
+// ALL PORTFOLIO DATA LIVES HERE IN BACKEND
+// =============================================
 const portfolioData = {
     name: "GIFT GEORGE MSAUKA",
     role: "Cloud Computing Student",
+    bio: "Passionate about cloud infrastructure, scalable web applications, and modern deployment workflows. Currently studying at the intersection of technology and innovation.",
     skills: [
         "HTML5",
         "CSS3",
@@ -24,25 +26,47 @@ const portfolioData = {
     contact: {
         email: "msaukagift@email.com",
         phone: "+255 749760141",
-        github: "github.com/giftmsauka"
+        github: "github.com/giftmsauka",
+        location: "Tanzania"
     },
     projects: [
-        "Personal Portfolio Website",
-        "Student Management System",
-        "Cloud Deployment Project"
+        {
+            name: "Personal Portfolio Website",
+            description: "A responsive portfolio hosted on Vercel with a Node.js/Express backend API deployed on Render.",
+            tech: ["HTML", "CSS", "JavaScript", "Vercel", "Render"],
+            link: "https://myportfolio.vercel.app"
+        },
+        {
+            name: "Student Management System",
+            description: "Web-based system for managing student records, course registrations, and academic performance tracking.",
+            tech: ["Node.js", "Express", "HTML", "CSS"],
+            link: "#"
+        },
+        {
+            name: "Cloud Deployment Project",
+            description: "End-to-end cloud deployment exercise demonstrating CI/CD workflows and deployment automation.",
+            tech: ["Vercel", "Render", "GitHub", "Node.js"],
+            link: "#"
+        }
     ]
 };
 
-// Root route
+// ---- Routes ----
+
+// Root
 app.get('/', (req, res) => {
     res.json({
-        message: "Portfolio API is running",
-        status: "online",
-        endpoints: ["/portfolio", "/portfolio/skills", "/portfolio/projects"]
+        message: "Portfolio API is running ✅",
+        endpoints: [
+            "GET /portfolio       — full portfolio data",
+            "GET /portfolio/skills    — skills only",
+            "GET /portfolio/projects  — projects only",
+            "GET /portfolio/contact   — contact info only"
+        ]
     });
 });
 
-// Full portfolio data
+// Full portfolio
 app.get('/portfolio', (req, res) => {
     res.json(portfolioData);
 });
@@ -57,8 +81,13 @@ app.get('/portfolio/projects', (req, res) => {
     res.json({ projects: portfolioData.projects });
 });
 
+// Contact only
+app.get('/portfolio/contact', (req, res) => {
+    res.json({ contact: portfolioData.contact });
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Portfolio API server running on port ${PORT}`);
+    console.log(`Portfolio API running on port ${PORT}`);
 });
