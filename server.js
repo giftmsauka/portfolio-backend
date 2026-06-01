@@ -29,7 +29,7 @@ const portfolioData = {
     ],
     contact: {
         email: "msaukagift@email.com",
-        phone: "+255 749760141",
+        phone: "+255 695 984 497",
         github: "github.com/giftmsauka",
         location: "Dar es Salaam, Tanzania"
     },
