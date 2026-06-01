@@ -10,7 +10,7 @@ app.use(express.json());
 // =============================================
 const portfolioData = {
     name: "GIFT GEORGE MSAUKA",
-    role: "Cloud Computing Student",
+    role: "data scentist",
     bio: "Passionate about cloud infrastructure, scalable web applications, and modern deployment workflows. Currently studying at the intersection of technology and innovation.",
     skills: [
         "HTML5",
