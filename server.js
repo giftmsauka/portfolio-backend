@@ -28,11 +28,11 @@ const portfolioData = {
         "Pandas & NumPy"
     ],
     contact: {
-        email: "msaukagift@email.com",
-        phone: "+255 695 984 497",
-        github: "github.com/giftmsauka",
-        location: "Dar es Salaam, Tanzania"
-    },
+    email: "msaukagift@email.com",
+    phone: "+255 695 984 497",
+    github: "github.com/giftmsauka",
+    location: "Dar es Salaam, Tanzania"
+},
     projects: [
         {
             name: "Personal Portfolio Website",
