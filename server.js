@@ -8,54 +8,51 @@ app.use(express.json());
 const portfolioData = {
     name: "GIFT GEORGE MSAUKA",
     role: "Data Science Student & Aspiring Data Analyst",
-    bio: "Third-year Bachelor of Data Science student at the Eastern Africa Statistical Training Centre (EASTC), Dar es Salaam. Passionate about transforming raw data into meaningful insights through statistical analysis, machine learning, and modern cloud deployment. Experienced in building end-to-end data pipelines and web-based analytical systems.",
+    bio: "Third-year Bachelor of Data Science student at the Eastern Africa Statistical Training Centre (EASTC), Dar es Salaam. Passionate about machine learning, statistical analysis, time series, spatial analysis, and transforming raw data into meaningful insights.",
     skills: [
         "Python",
         "R Programming",
         "Machine Learning",
+        "Time Series Analysis",
+        "Spatial Analysis",
         "Statistical Analysis",
         "Data Visualization",
         "SQL & MySQL",
         "JavaScript",
         "Node.js",
-        "Express.js",
         "HTML5 & CSS3",
-        "Cloud Computing",
         "Git & GitHub",
-        "Vercel",
-        "Render",
         "Scikit-learn",
-        "Pandas & NumPy"
+        "Pandas & NumPy",
+        "QGIS"
     ],
     contact: {
-    email: "msaukagift@email.com",
-    phone: "+255 695 984 497",
-    github: "github.com/giftmsauka",
-    location: "Dar es Salaam, Tanzania"
-},
+        email: "msaukagift@email.com",
+        phone: "+255 695 984 497",
+        github: "github.com/giftmsauka",
+        location: "Dar es Salaam, Tanzania"
+    },
     projects: [
         {
             name: "Personal Portfolio Website",
-            description: "A responsive personal portfolio website with a Node.js/Express backend API deployed on Render and frontend hosted on Vercel, demonstrating full-stack cloud deployment skills.",
+            description: "A responsive personal portfolio with a Node.js/Express backend API deployed on Render and frontend hosted on Vercel. All content is fetched dynamically from the backend API on page load.",
             tech: ["HTML", "CSS", "JavaScript", "Node.js", "Vercel", "Render"],
             link: "https://portfolio-frontend-rose-psi.vercel.app"
         },
         {
             name: "Web-Based Expense Analysis System",
-            description: "A data science capstone project that applies K-Means Clustering to segment student spending behaviour at EASTC. Features a Python Flask backend, MySQL database, and interactive dashboard for expense visualization.",
+            description: "A data science capstone applying K-Means Clustering to segment student spending behaviour at EASTC. Features a Python Flask backend, MySQL database, and an interactive analytics dashboard.",
             tech: ["Python", "Flask", "K-Means Clustering", "MySQL", "JavaScript", "HTML/CSS"],
             link: "#"
         },
         {
             name: "Student Management System",
-            description: "Web-based system for managing student records, course registrations, and academic performance tracking with a clean administrative dashboard.",
+            description: "A web-based system for managing student records, course registrations, and academic performance tracking with a clean administrative dashboard interface.",
             tech: ["Node.js", "Express", "HTML", "CSS"],
             link: "#"
         }
     ]
 };
-
-// ---- Routes ----
 
 app.get('/', (req, res) => {
     res.json({
